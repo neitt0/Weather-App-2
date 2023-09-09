@@ -5,14 +5,27 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.mainContainer {
+    display: flex;
+    height: 400px;
+    width: 800px;
+
+}
+
 .infoMain {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 500px;
-    /* delete later */
-
+    flex: 1;
+    background-color: blue;
+    scale: 1.05;
 }
 
 .userInfo {
@@ -20,4 +33,36 @@
 
 .weatherSum {
     align-self: start;
+}
+
+.infoDetail {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1.35;
+}
+
+.infoDetail > * {
+    width: 80%;
+}
+
+.weatherDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.weatherDetails > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.weatherPrediction {
+    display: flex;
+    justify-content: center;
+}
+
+.weatherPrediction > div:hover {
+    background-color: gray;
 }
