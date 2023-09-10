@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 
 .mainContainer {
     display: flex;
-    height: 400px;
+    height: 500px;
     width: 800px;
 
 }
@@ -26,22 +27,63 @@ body {
     flex: 1;
     background-color: blue;
     scale: 1.05;
+    border-radius: 50px;
 }
 
-.userInfo {
+.infoMain > div {
+    padding: 30px;
+}
+
+.infoMain::before {
+    content: '';
+    background-image: url(./images/myrtle-beach-coastline.jpg);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    opacity: .5;
+    z-index: -1;
+    border-radius: 50px;
+}
+
+.userInfo > * {
+    padding: 5px 0;
 }
 
 .weatherSum {
     align-self: start;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.weatherSum > * {
+    padding: 7px;
+}
+
+.weatherSum > i {
+    font-size: 75px;
+}
+
+.weatherSum > p {
+    font-size: 1.5rem;
 }
 
 .infoDetail {
-    background-color: lightblue;
+    background-color: rgb(51, 51, 51);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     flex: 1.35;
+    border-radius: 0 50px 50px 0;
+    box-shadow: -10px 0px rgb(51, 51, 51);
+}
+
+.infoDetail > div {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 2.5rem;
 }
 
 .infoDetail > * {
@@ -63,6 +105,35 @@ body {
     justify-content: center;
 }
 
+.weatherPrediction > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.weatherPrediction > div > i {
+    padding: 5px 0;
+}
+
 .weatherPrediction > div:hover {
-    background-color: gray;
+    background-color: white;
+    scale: 1.2;
+    > * {
+        color: rgb(79, 77, 83);
+    }
+}
+
+button {
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(80, 80, 167);
+    font-size: 1.2rem;
+    font-weight: 800;
 }
