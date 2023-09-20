@@ -1,10 +1,15 @@
 const searchLoc = document.querySelector('button')
+
 const todayTemp = document.querySelector('.weatherSum h1')
 const todayWeekDate = document.querySelector('.dayOfWeek')
 const todayDate = document.querySelector('.date')
 const selectedlocation = document.querySelector('.location')
 const todayIcon = document.querySelector('.weatherSum i')
 const todayDescription = document.querySelector('.weatherDescription')
+
+const precipitation = document.querySelector('.precipitationValue')
+const humidity = document.querySelector('.humidityValue')
+const windSpeed = document.querySelector('.windSpeedValue')
 
 const apiKey = 'f3cc0892f458cdd3dce8f69e9c8356c0'
 
@@ -49,7 +54,7 @@ function fetchData(area) {
 
             // update infos
             // today infos
-            todayTemp.textContent = `${data.list[0].main['temp']}°C`
+            todayTemp.textContent = `${Math.round(data.list[0].main['temp'])}°C`
             todayWeekDate.textContent = new Date().toLocaleDateString('en', {weekday: 'long'})
             todayDate.textContent = new Date().toLocaleDateString('en', {day: 'numeric', month: 'long', year: 'numeric'})
             selectedlocation.textContent = `${data.city['name']}, ${data.city['country']}`
@@ -57,6 +62,9 @@ function fetchData(area) {
             todayDescription.textContent = `${data.list[0].weather[0].description}`
 
             // forecasts
+            precipitation.textContent = `${data.list[0].pop}%`
+            humidity.textContent = `${data.list[0].main['humidity']}%`
+            windSpeed.textContent = `${Math.round(data.list[0].wind['speed'])} km/h`
         })
     
 }
